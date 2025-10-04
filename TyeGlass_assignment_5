@@ -12,3 +12,17 @@ while starting_number != 1: #keep looping until the number becomes 1
     steps += 1
 print(f'\nSteps: {steps}')
 print()
+print('=== Challenge 2: Prime Number Checker ===')
+user_number = int(input('Enter a number: '))#get a number from the user
+print(f'Testing divisors from 2 to {user_number - 1}...')
+is_prime = True #Assume the number is prime until its proven otherwise
+for i in range(2, user_number): #test all numbers from 2 up to one less than the user's number
+    if user_number % i == 0:
+        is_prime = False #Mark it as not prime
+        divisor = i
+        break #Stop checking since we already found a divisor
+
+if is_prime:
+    print(user_number, "is prime!")
+else: #if a divisor was found
+    print(user_number, "is not prime (divisible by", divisor, ")")
