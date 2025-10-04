@@ -1,0 +1,14 @@
+steps = 0 #keeps track of how many steps it takes to reach 1
+print('=== Challenge 1: Collatz Conjecture ===')
+starting_number = int(input('Enter starting number: '))
+print('Sequence:', end=' ')
+print(starting_number, end=' ')
+while starting_number != 1: #keep looping until the number becomes 1
+    if starting_number % 2 == 0:
+        starting_number = starting_number // 2
+    else: #if the number is odd, multiply by 3 and add 1
+        starting_number = (3 * starting_number) + 1
+    print(starting_number, end=' ') #Print the next number in the sequence
+    steps += 1
+print(f'\nSteps: {steps}')
+print()
